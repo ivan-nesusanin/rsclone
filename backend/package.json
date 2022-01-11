@@ -1,0 +1,20 @@
+{
+  "name": "kinopoisk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index",
+    "serve": "nodemon index"
+  },
+  "type": "module",
+  "author": "kvadrat-team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
