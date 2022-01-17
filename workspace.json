@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "auth": "libs/auth",
+    "frontend": "apps/frontend",
+    "frontend-e2e": "apps/frontend-e2e",
+    "models": "libs/models"
+  }
+}
