@@ -1,0 +1,122 @@
+// header styles
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  background-color: #192f2d;
+}
+
+.row {
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  font-size: 2.3em;
+  font-weight: bolder;
+  border: solid 1px #fff;
+  text-align: center;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  margin: 15px 0;
+}
+
+.menu-link {
+  font-size: 1.8em;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #fff;
+
+  @media (max-width: 768px) {
+    order: 3;
+  }
+}
+
+.account-container {
+  display: flex;
+  justify-content: end;
+
+  @media (max-width: 768px) {
+    order: 2;
+  }
+}
+
+.search {
+  width: 100%;
+  font-size: 1.5em;
+  border: none;
+  outline: none;
+}
+
+.btn-icon,
+.btn-account {
+  cursor: pointer;
+}
+
+.btn-account {
+  border-radius: 15px;
+}
+
+// footer styles
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #192f2d;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+}
+
+.year-container,
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.year {
+  color: #fff;
+  font-size: 15px;
+}
+
+.decorate-link {
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    transition: 1s;
+  }
+}
+
+.git-name {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

@@ -1,1 +1,68 @@
-<router-outlet></router-outlet>
+<header class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-sm-11">
+        <div class="logo">KINOPOISKclone</div>
+      </div>
+      <div class="col-md-7 search-container">
+        <input type="search" class="search" placeholder="ПОИСК ..." spellcheck="true">
+        <button class="btn-icon">
+          <i class="icon-params"></i>
+        </button>
+        <button class="btn-icon">
+          <i class="icon-search"></i>
+        </button>
+      </div>
+      <div class="col-md-1 col-sm-1 account-container">
+        <button class="btn-account">
+          <i class="icon-user"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <nav class="col-sm-12 menu-container">
+        <ul class="menu">
+          <li>
+            <a class="menu-link" href="#">Фильмы</a>
+          </li>
+          <li>
+            <a class="menu-link" href="#">Сериалы</a>
+          </li>
+          <li>
+            <a class="menu-link" href="#">Персоны</a>
+          </li>
+          <li>
+            <a class="menu-link" href="#">Рецензии</a>
+          </li>
+          <li>
+            <a class="menu-link" href="#">События</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<main class="main">
+  <div style="height: 110px;"></div>
+  <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2 col-xs-12 year-container">
+        <span class="year">© 2022</span>
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <span class="git-name">
+          <a class="decorate-link" href="https://github.com/antoshkoo" target="_blank">antoshkoo</a>
+          <a class="decorate-link" href="https://github.com/ivan-nesusanin" target="_blank">ivan-nesusanin</a>
+        </span>
+      </div>
+      <div class="col-sm-2 col-xs-12 logo-container">
+        <a href="https://rs.school/js/" target="_blank">
+          <img src="./assets/svg/rs_school.svg" alt="logo RS School" height="30">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
