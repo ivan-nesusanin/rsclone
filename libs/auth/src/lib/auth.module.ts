@@ -8,7 +8,7 @@ export const authRoutes: Route[] = [
   { path: 'login', component: LoginComponent },
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule.forChild(authRoutes)],
   declarations: [LoginComponent, LoginFormComponent],
 })
 export class AuthModule {}
