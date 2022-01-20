@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "auth": "libs/auth",
+    "categories": "libs/categories",
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e",
     "models": "libs/models"
