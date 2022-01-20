@@ -5,6 +5,7 @@
     "categories": "libs/categories",
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e",
+    "home": "libs/home",
     "models": "libs/models"
   }
 }

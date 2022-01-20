@@ -1,3 +1,7 @@
+@import "../styles/scss/fontawesome.scss";
+@import "../styles/scss/regular.scss";
+@import "../styles/scss/solid.scss";
+
 // header styles
 .header {
   position: fixed;
@@ -15,11 +19,13 @@
 }
 
 .logo {
-  display: block;
-  font-size: 2.3em;
   font-weight: bolder;
   border: solid 1px #fff;
   text-align: center;
+
+  h1 {
+    font-size: 2.7em;
+  }
 }
 
 .menu-container {
@@ -46,9 +52,6 @@
 .search-container {
   display: flex;
   align-items: center;
-  height: 25px;
-  border-radius: 5px;
-  background-color: #fff;
 
   @media (max-width: 768px) {
     order: 3;
@@ -69,15 +72,6 @@
   font-size: 1.5em;
   border: none;
   outline: none;
-}
-
-.btn-icon,
-.btn-account {
-  cursor: pointer;
-}
-
-.btn-account {
-  border-radius: 15px;
 }
 
 // footer styles
