@@ -11,6 +11,6 @@
     "**/*.spec.ts",
     "**/*.d.ts",
     "src/lib/authentificate.ts",
-    "src/lib/authenticate.ts"
+    "src/lib/Authenticate.ts"
   ]
 }
