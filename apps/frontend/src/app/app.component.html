@@ -2,26 +2,27 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 col-sm-11">
-        <div class="logo">{{ title }}</div>
+        <div class="logo">
+          <h1>{{ title }}</h1>
+        </div>
       </div>
       <div class="col-md-7 search-container">
-        <input
-          type="search"
-          class="search"
-          placeholder="ПОИСК ..."
-          spellcheck="true"
-        />
-        <button class="btn-icon">
-          <i class="icon-params"></i>
-        </button>
-        <button class="btn-icon">
-          <i class="icon-search"></i>
-        </button>
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="ПОИСК ...">
+          <button class="btn btn-outline-secondary" type="button">
+            <i class="fas fa-sliders-h"></i>
+          </button>
+          <button class="btn btn-outline-secondary" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
       </div>
       <div class="col-md-1 col-sm-1 account-container">
-        <button class="btn-account">
-          <i class="icon-user"></i>
-        </button>
+        <!-- <button class="btn btn-light"> -->
+        <a href="#" class="link-light">
+          <i class="far fa-user-circle"></i>
+        </a>
+        <!-- </button> -->
       </div>
     </div>
     <div class="row">
@@ -36,8 +37,9 @@
   </div>
 </header>
 <main class="main">
-  <div style="height: 110px"></div>
+  <div style="height: 120px"></div>
   <router-outlet></router-outlet>
+  <div style="height: 120px"></div>
 </main>
 <footer class="footer">
   <div class="container-fluid">

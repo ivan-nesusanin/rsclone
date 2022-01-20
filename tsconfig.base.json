@@ -17,6 +17,7 @@
     "paths": {
       "@clone/auth": ["libs/auth/src/index.ts"],
       "@clone/categories": ["libs/categories/src/index.ts"],
+      "@clone/home": ["libs/home/src/index.ts"],
       "@clone/models": ["libs/models/src/index.ts"]
     }
   },
