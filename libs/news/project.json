@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/news",
+  "sourceRoot": "libs/news/src",
+  "prefix": "clone",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/news"],
+      "options": {
+        "jestConfig": "libs/news/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/news/src/**/*.ts", "libs/news/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
