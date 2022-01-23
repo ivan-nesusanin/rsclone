@@ -12,9 +12,9 @@ const routes: Routes = [
     loadChildren: () => import('@clone/auth').then((m) => m.AuthModule),
   },
   {
-    path: 'categories',
+    path: 'film',
     loadChildren: () =>
-      import('@clone/categories').then((m) => m.CategoriesModule),
+      import('@clone/film').then((m) => m.FilmModule),
   },
 ];
 
