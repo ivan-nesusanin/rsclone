@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Movie } from '@clone/models';
-import { MovieService } from '../../../../services/movie.service';
+import { MovieService } from '@clone/services';
+// import { MovieService } from '@clone/services';
 
 @Component({
   selector: 'clone-movie-home-page',
