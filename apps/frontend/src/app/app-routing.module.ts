@@ -12,9 +12,16 @@ const routes: Routes = [
     loadChildren: () => import('@clone/auth').then((m) => m.AuthModule),
   },
   {
+    path: 'user',
+    loadChildren: () => import('@clone/user').then((m) => m.UserModule),
+  },
+  {
     path: 'film',
-    loadChildren: () =>
-      import('@clone/film').then((m) => m.FilmModule),
+    loadChildren: () => import('@clone/film').then((m) => m.FilmModule),
+  },
+  {
+    path: '**',
+    redirectTo: '/',
   },
 ];
 

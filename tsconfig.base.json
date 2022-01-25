@@ -19,7 +19,10 @@
       "@clone/categories": ["libs/categories/src/index.ts"],
       "@clone/film": ["libs/film/src/index.ts"],
       "@clone/home": ["libs/home/src/index.ts"],
-      "@clone/models": ["libs/models/src/index.ts"]
+      "@clone/models": ["libs/models/src/index.ts"],
+      "@clone/movie": ["libs/movie/src/index.ts"],
+      "@clone/news": ["libs/news/src/index.ts"],
+      "@clone/user": ["libs/user/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

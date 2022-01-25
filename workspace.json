@@ -8,6 +8,9 @@
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e",
     "home": "libs/home",
-    "models": "libs/models"
+    "models": "libs/models",
+    "movie": "libs/movie",
+    "news": "libs/news",
+    "user": "libs/user"
   }
 }
