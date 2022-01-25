@@ -4,6 +4,7 @@
     "api": "apps/api",
     "auth": "libs/auth",
     "categories": "libs/categories",
+    "film": "libs/film",
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e",
     "home": "libs/home",

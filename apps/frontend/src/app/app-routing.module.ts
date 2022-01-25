@@ -16,9 +16,8 @@ const routes: Routes = [
     loadChildren: () => import('@clone/user').then((m) => m.UserModule),
   },
   {
-    path: 'categories',
-    loadChildren: () =>
-      import('@clone/categories').then((m) => m.CategoriesModule),
+    path: 'film',
+    loadChildren: () => import('@clone/film').then((m) => m.FilmModule),
   },
   {
     path: '**',

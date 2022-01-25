@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/film",
+  "sourceRoot": "libs/film/src",
+  "prefix": "clone",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/film"],
+      "options": {
+        "jestConfig": "libs/film/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/film/src/**/*.ts", "libs/film/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
