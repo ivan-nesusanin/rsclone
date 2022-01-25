@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('@clone/film').then((m) => m.FilmModule),
   },
   {
+    path: 'movie',
+    loadChildren: () => import('@clone/movie').then((m) => m.MovieModule),
+  },
+  {
     path: '**',
     redirectTo: '/',
   },
