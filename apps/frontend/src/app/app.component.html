@@ -1,15 +1,15 @@
 <header class="header sticky-top">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 col-sm-11">
+      <div class="col-md-4 col-sm-11 mb-3">
         <div class="logo">
           <h1>{{ title }}</h1>
         </div>
       </div>
-      <div class="col-md-7 search-container">
+      <div class="col-md-7 search-container mb-3">
         <div class="input-group">
           <input type="search" class="form-control" placeholder="ПОИСК ...">
-          <button class="btn btn-outline-secondary" type="button">
+          <button class="btn btn-outline-secondary" type="button" routerLinkActive="active" [routerLink]="['/search']">
             <i class="fas fa-sliders-h"></i>
           </button>
           <button class="btn btn-outline-secondary" type="button">
@@ -17,7 +17,7 @@
           </button>
         </div>
       </div>
-      <div class="col-md-1 col-sm-1 account-container">
+      <div class="col-md-1 col-sm-1 account-container mb-3">
         <!-- <button class="btn btn-light"> -->
         <a href="#" class="link-light">
           <i class="far fa-user-circle"></i>
@@ -33,22 +33,22 @@
             {{ item }}
           </li> -->
           <li>
-            <a class="menu-link" routerLinkActive="active" [routerLink]="['/']">Главная</a>
+            <a class="menu-link fs-5" routerLinkActive="active" [routerLink]="['/']">Главная</a>
           </li>
           <li>
-            <a class="menu-link" routerLinkActive="active" [routerLink]="['/film']">Фильмы</a>
+            <a class="menu-link fs-5" routerLinkActive="active" [routerLink]="['/film']">Фильмы</a>
           </li>
           <li>
-            <a class="menu-link" routerLinkActive="active" [routerLink]="['/categories']">Сериалы</a>
+            <a class="menu-link fs-5" routerLinkActive="active" [routerLink]="['/categories']">Сериалы</a>
           </li>
           <li>
-            <a class="menu-link" routerLinkActive="active" [routerLink]="['/categories']">Персоны</a>
+            <a class="menu-link fs-5" routerLinkActive="active" [routerLink]="['/categories']">Персоны</a>
           </li>
           <li>
-            <a class="menu-link" routerLinkActive="active" [routerLink]="['/categories']">Рецензии</a>
+            <a class="menu-link fs-5" routerLinkActive="active" [routerLink]="['/categories']">Рецензии</a>
           </li>
           <li>
-            <a class="menu-link" routerLinkActive="active" [routerLink]="['/categories']">События</a>
+            <a class="menu-link fs-5" routerLinkActive="active" [routerLink]="['/categories']">События</a>
           </li>
         </ul>
       </nav>
