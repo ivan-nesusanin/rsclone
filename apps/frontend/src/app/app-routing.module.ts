@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('@clone/categories').then((m) => m.CategoriesModule),
   },
+  {
+    path: '**',
+    redirectTo: '/',
+  },
 ];
 
 @NgModule({
