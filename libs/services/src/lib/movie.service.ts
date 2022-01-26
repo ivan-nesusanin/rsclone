@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
-import { Movie } from '../models/src/lib/Movie';
+import { Observable } from 'rxjs';
+import { MovieResponse } from '@clone/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MovieService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
-  getMovie(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(
+  getMovie(): Observable<MovieResponse> {
+    return this.http.get<MovieResponse>(
       'https://kinopoiskapiunofficial.tech/api/v2.2/films/top',
       {
         headers: {

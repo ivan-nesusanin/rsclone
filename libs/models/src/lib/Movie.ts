@@ -2,7 +2,7 @@ export interface Movie {
   countries: [];
   filmId: number;
   filmLength: string;
-  genres: [];
+  genres: Genre[];
   nameEn: string;
   nameRu: string;
   posterUrl: string;
@@ -11,4 +11,13 @@ export interface Movie {
   ratingChange: object;
   ratingVoteCount: number;
   year: string;
+}
+
+export interface MovieResponse {
+  pageCount: number;
+  films: Partial<Movie>[];
+}
+
+export interface Genre {
+  genre: string;
 }

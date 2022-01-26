@@ -10,7 +10,7 @@
     "models": "libs/models",
     "movie": "libs/movie",
     "news": "libs/news",
-    "service": "libs/service",
+    "services": "libs/services",
     "user": "libs/user"
   }
 }

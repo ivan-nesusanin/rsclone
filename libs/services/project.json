@@ -1,14 +1,14 @@
 {
   "projectType": "library",
-  "root": "libs/service",
-  "sourceRoot": "libs/service/src",
+  "root": "libs/services",
+  "sourceRoot": "libs/services/src",
   "prefix": "clone",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/service"],
+      "outputs": ["coverage/libs/services"],
       "options": {
-        "jestConfig": "libs/service/jest.config.js",
+        "jestConfig": "libs/services/jest.config.js",
         "passWithNoTests": true
       }
     },
@@ -16,8 +16,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/service/src/**/*.ts",
-          "libs/service/src/**/*.html"
+          "libs/services/src/**/*.ts",
+          "libs/services/src/**/*.html"
         ]
       }
     }
