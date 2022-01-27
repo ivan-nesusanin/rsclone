@@ -14,7 +14,7 @@ export class MovieHomePageComponent implements OnInit {
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.movieService.getMovie().subscribe(({ pageCount, films }) => {
+    this.movieService.getMovie().subscribe(({ films }) => {
       this.movies = films;
       console.log(this.movies);
     });
