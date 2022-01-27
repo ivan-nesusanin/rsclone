@@ -11,6 +11,7 @@
     "movie": "libs/movie",
     "news": "libs/news",
     "schemas": "libs/schemas",
+    "search": "libs/search",
     "services": "libs/services",
     "user": "libs/user"
   }

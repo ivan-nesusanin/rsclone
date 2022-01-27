@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('@clone/home').then((m) => m.HomeModule),
   },
   {
+    path: 'search',
+    loadChildren: () => import('@clone/search').then((m) => m.SearchModule),
+  },
+  {
     path: 'auth',
     loadChildren: () => import('@clone/auth').then((m) => m.AuthModule),
   },
