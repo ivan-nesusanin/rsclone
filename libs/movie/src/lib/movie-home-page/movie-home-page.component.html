@@ -57,7 +57,7 @@
   <div class="container">
     <div class="row">
       <div *ngFor="let item of movies" class="card col-3">
-        <a href="#">
+        <a [routerLink]="[item.filmId]">
           <img
             src="{{ item?.posterUrl || 'n/a' }}"
             class="card-img-top"
@@ -70,7 +70,11 @@
             {{ item.year }}
           </p>
           <p>
-            <a href="#" *ngFor="let genre of item.genres">{{ genre }}</a>
+            <ng-container *ngFor="let genre of item.genres">
+              <a [routerLink]="[genre.genre]">
+                {{ genre.genre }}
+              </a>
+            </ng-container>
           </p>
         </div>
       </div>
