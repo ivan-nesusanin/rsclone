@@ -1,58 +1,4 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <select
-          class="form-select form-select-md mb-4"
-          aria-label=".form-select-lg example"
-        >
-          <option selected>Жанры:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <select
-          class="form-select form-select-md"
-          aria-label=".form-select-lg example"
-        >
-          <option selected>Страны:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <select
-          class="form-select form-select-md"
-          aria-label=".form-select-lg example"
-        >
-          <option selected>Годы:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <select
-          class="form-select form-select-md"
-          aria-label=".form-select-lg example"
-        >
-          <option selected>Рейтинг:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <button type="button" class="btn btn-outline-light">Сбросить фильтры</button>
-      </div>
-    </div>
-  </div>
-</section>
+<clone-movie-filter></clone-movie-filter>
 <section class="mt-4">
   <div class="container">
     <div class="row">
@@ -65,7 +11,7 @@
         /></a>
         <div class="card-body">
           <h6 class="card-title text-dark">{{ item?.nameRu || 'n/a' }}</h6>
-          <p style="color: #000">
+          <p class="text-body">
             {{ item.rating }} ({{ item.ratingVoteCount }})<br />
             {{ item.year }}
           </p>
