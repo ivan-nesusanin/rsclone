@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieId } from '@clone/models';
 import { MovieService } from '@clone/services';
@@ -14,7 +14,10 @@ export class MovieDetailComponent implements OnInit {
   public id = 0
   public movieId: Partial<MovieId> = {};
 
-  constructor(private readonly route: ActivatedRoute, private movieService: MovieService) { }
+  constructor(
+    private readonly route: ActivatedRoute,
+    private movieService: MovieService,
+    private readonly cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     // console.log(this.route.snapshot.url[0]);
@@ -22,7 +25,8 @@ export class MovieDetailComponent implements OnInit {
 
     this.movieService.getMovieId(this.id).subscribe(response => {
       this.movieId = response;
-      console.log(this.movieId.nameRu)
+      console.log(this.movieId);
+      this.cdr.detectChanges();
     })
   }
 }

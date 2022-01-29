@@ -1,13 +1,14 @@
 @import "../styles/scss/fontawesome.scss";
 @import "../styles/scss/regular.scss";
 @import "../styles/scss/solid.scss";
+@import '../styles/scss/abstracts/variables';
 
 // header styles
 .header {
   display: flex;
   align-items: center;
   padding-top: 15px;
-  background-color: #192f2d;
+  background-color: /* #192f2d */ $bg-color;
 }
 
 .row {
@@ -71,7 +72,7 @@
 
 // footer styles
 .footer {
-  background-color: #192f2d;
+  background-color: /* #192f2d */ $bg-color;
   display: flex;
   align-items: center;
   height: 10vh;

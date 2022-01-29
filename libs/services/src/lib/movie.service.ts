@@ -30,4 +30,13 @@ export class MovieService {
       }
     })
   }
+
+  // getStaff() {
+  //   return this.http.get<MovieId>('https://kinopoiskapiunofficial.tech/api/v1/staff', {
+  //     headers: {
+  //       'X-API-KEY': '9ea108a5-99f0-499a-a907-5373bb1396e6',
+  //       'Content-Type': 'application/json',
+  //     }
+  //   })
+  // }
 }

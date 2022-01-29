@@ -17,7 +17,7 @@ export interface MovieId {
   kinopoiskId: number;
   imdbId:	string;
   nameRu:	string;
-  nameEn:	string;
+  nameEn?:	string;
   nameOriginal:	string;
   posterUrl:	string;
   posterUrlPreview:	string;
