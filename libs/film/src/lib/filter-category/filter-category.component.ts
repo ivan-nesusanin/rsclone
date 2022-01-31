@@ -31,7 +31,7 @@ export class FilterCategoryComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<Film[]>('https://kinopoiskapiunofficial.tech/api/v2.2/films/top', {
+    this.http.get<Film[]>('https://kinopoiskapiunofficial.tech/api/v2.2/films/435', {
       headers: {
         'X-API-KEY': '9ea108a5-99f0-499a-a907-5373bb1396e6',
         'Content-Type': 'application/json',

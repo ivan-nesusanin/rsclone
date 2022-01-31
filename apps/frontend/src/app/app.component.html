@@ -8,8 +8,13 @@
       </div>
       <div class="col-md-7 search-container mb-3">
         <div class="input-group">
-          <input type="search" class="form-control" placeholder="ПОИСК ...">
-          <button class="btn btn-outline-secondary" type="button" routerLinkActive="active" [routerLink]="['/search']">
+          <input type="search" class="form-control" placeholder="ПОИСК ..." />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            routerLinkActive="active"
+            [routerLink]="['/search']"
+          >
             <i class="fas fa-sliders-h"></i>
           </button>
           <button class="btn btn-outline-secondary" type="button">
@@ -32,13 +37,17 @@
             {{ item }}
           </li> -->
           <li>
-            <a class="menu-link" routerLinkActive="active" [routerLink]="['/']"
+            <a
+              class="menu-link fs-5"
+              routerLinkActive="active"
+              [routerLink]="['/']"
+              [routerLinkActiveOptions]="{ exact: true }"
               >Главная</a
             >
           </li>
           <li>
             <a
-              class="menu-link"
+              class="menu-link fs-5"
               routerLinkActive="active"
               [routerLink]="['/movie']"
               >Фильмы</a
@@ -46,7 +55,7 @@
           </li>
           <li>
             <a
-              class="menu-link"
+              class="menu-link fs-5"
               routerLinkActive="active"
               [routerLink]="['/categories']"
               >Сериалы</a
@@ -54,7 +63,7 @@
           </li>
           <li>
             <a
-              class="menu-link"
+              class="menu-link fs-5"
               routerLinkActive="active"
               [routerLink]="['/categories']"
               >Персоны</a
@@ -62,7 +71,7 @@
           </li>
           <li>
             <a
-              class="menu-link"
+              class="menu-link fs-5"
               routerLinkActive="active"
               [routerLink]="['/categories']"
               >Рецензии</a
@@ -70,7 +79,7 @@
           </li>
           <li>
             <a
-              class="menu-link"
+              class="menu-link fs-5"
               routerLinkActive="active"
               [routerLink]="['/categories']"
               >События</a

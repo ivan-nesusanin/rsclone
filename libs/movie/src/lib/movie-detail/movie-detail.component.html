@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img class="img-fluid" src="{{ movieId.posterUrl }}" alt="poster">
+    </div>
+    <div class="col-sm mx-4">
+      <h2 class="fw-bolder">{{ movieId.nameRu }} ({{ movieId.year }})</h2>
+      <h5 class="text-secondary">{{ movieId.nameOriginal }}</h5>
+      <p class="fs-6 mt-3">{{ movieId.shortDescription }}</p>
+      <h4 class="py-3">О фильме:</h4>
+      <div class="row">
+        <div class="col-4">
+          <p class="fs-6 text-secondary">Год производства:</p>
+        </div>
+        <div class="col-8">
+          <p class="fs-6">{{ movieId.year }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class="fs-6 text-secondary">Страна:</p>
+        </div>
+        <div class="col-8">
+          <p class="fs-6">
+            <ng-container *ngFor="let country of movieId.countries">
+              {{ country.country }},
+            </ng-container>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class="fs-6 text-secondary">Жанр:</p>
+        </div>
+        <div class="col-8">
+          <p class="fs-6">
+            <ng-container *ngFor="let genre of movieId.genres">
+              {{ genre.genre }},
+            </ng-container>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class="fs-6 text-secondary">Слоган:</p>
+        </div>
+        <div class="col-8">
+          <p class="fs-6">{{ movieId.slogan }}</p>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-4">
+          <p class="fs-6 text-secondary">Год производства:</p>
+          <p class="fs-6 text-secondary">Страна:</p>
+          <p class="fs-6 text-secondary">Жанр:</p>
+          <p class="fs-6 text-secondary">Слоган:</p>
+          <p class="fs-6 text-secondary">Режиссер:</p>
+        </div>
+        <div class="col-8">
+          <p class="fs-6">{{ movieId.year }}</p>
+          <p class="fs-6">
+            <ng-container *ngFor="let country of movieId.countries">
+              {{ country.country }},
+            </ng-container>
+          </p>
+          <p class="fs-6">
+            <ng-container *ngFor="let genre of movieId.genres">
+              {{ genre.genre }},
+            </ng-container>
+          </p>
+          <p class="fs-6">{{ movieId.slogan }}</p>
+        </div>
+      </div> -->
+    </div>
+    <div class="col-sm-2">
+      <h6>Рейтинг Кинопоиск</h6>
+      <h2 class="fw-bolder text-success mb-4">
+        {{ movieId.ratingKinopoisk }}
+        <span class="fs-5 text-white">({{ movieId.ratingKinopoiskVoteCount }})</span>
+      </h2>
+      <h6>Рейтинг IMDB</h6>
+      <h2 class="fw-bolder text-success mb-4">
+        {{ movieId.ratingImdb }}
+        <span class="fs-5 text-white">({{ movieId.ratingImdbVoteCount }})</span>
+      </h2>
+      <h6>Рейтинг кинокритиков</h6>
+      <h2 class="fw-bolder text-success mb-4">
+        {{ movieId.ratingFilmCritics }}
+        <span class="fs-5 text-white">({{ movieId.ratingFilmCriticsVoteCount }})</span>
+      </h2>
+      <button type="button" class="btn btn-outline-light">Оценить фильм</button>
+    </div>
+  </div>
+</div>
