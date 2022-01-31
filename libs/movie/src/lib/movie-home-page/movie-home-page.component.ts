@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Movie } from '@clone/models';
+import { Movie, MovieId } from '@clone/models';
 import { MovieService } from '@clone/services';
 
 @Component({
@@ -10,6 +10,7 @@ import { MovieService } from '@clone/services';
 })
 export class MovieHomePageComponent implements OnInit {
   public movies: Partial<Movie>[] = [];
+  public ourMovies: Partial<MovieId>[] = [];
 
   constructor(private movieService: MovieService) {}
 
@@ -17,6 +18,10 @@ export class MovieHomePageComponent implements OnInit {
     this.movieService.getMovie().subscribe(({ films }) => {
       this.movies = films;
       console.log(this.movies);
+    });
+    this.movieService.getMovieFromOurApi().subscribe((response) => {
+      this.ourMovies = response;
+      console.log(this.ourMovies);
     });
   }
 }

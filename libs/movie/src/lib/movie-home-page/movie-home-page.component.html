@@ -2,6 +2,36 @@
 <section class="mt-4">
   <div class="container">
     <div class="row">
+      <div *ngFor="let item of ourMovies" class="card col-3">
+        <a [routerLink]="[item.kinopoiskId]">
+          <img
+            src="{{ item?.posterUrl || 'n/a' }}"
+            class="card-img-top"
+            alt="poster"
+        /></a>
+        <div class="card-body">
+          <h6 class="card-title text-dark">{{ item?.nameRu || 'n/a' }}</h6>
+          <p class="text-body">
+            {{ item.ratingKinopoiskVoteCount }} ({{
+              item.ratingKinopoisk
+            }})<br />
+            {{ item.year }}
+          </p>
+          <p>
+            <ng-container *ngFor="let genre of item.genres">
+              <a [routerLink]="[genre.genre]">
+                {{ genre.genre }}
+              </a>
+            </ng-container>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt-4">
+  <div class="container">
+    <div class="row">
       <div *ngFor="let item of movies" class="card col-3">
         <a [routerLink]="[item.filmId]">
           <img
