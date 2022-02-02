@@ -37,12 +37,4 @@ export class MovieService {
   getMovieFromOurApi(): Observable<any> {
     return this.http.get<any>('http://localhost:3333/api/movie');
   }
-  // getStaff() {
-  //   return this.http.get<MovieId>('https://kinopoiskapiunofficial.tech/api/v1/staff', {
-  //     headers: {
-  //       'X-API-KEY': '9ea108a5-99f0-499a-a907-5373bb1396e6',
-  //       'Content-Type': 'application/json',
-  //     }
-  //   })
-  // }
 }

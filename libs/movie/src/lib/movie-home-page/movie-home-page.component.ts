@@ -17,11 +17,11 @@ export class MovieHomePageComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getMovie().subscribe(({ films }) => {
       this.movies = films;
-      console.log(this.movies);
+      // console.log(this.movies);
     });
     this.movieService.getMovieFromOurApi().subscribe((response) => {
       this.ourMovies = response;
-      console.log(this.ourMovies);
+      // console.log(this.ourMovies);
     });
   }
 }
