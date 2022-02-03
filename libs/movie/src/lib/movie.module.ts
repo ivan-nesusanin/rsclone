@@ -21,7 +21,15 @@ export const movieRoutes: Route[] = [
     ReactiveFormsModule,
     /* NgxPaginationModule */
   ],
-  declarations: [MovieHomePageComponent, MovieDetailComponent, MovieFilterComponent],
-  exports: [MovieHomePageComponent, MovieDetailComponent, MovieFilterComponent],
+  declarations: [
+    MovieHomePageComponent,
+    MovieDetailComponent,
+    MovieFilterComponent
+  ],
+  exports: [
+    MovieHomePageComponent,
+    MovieDetailComponent,
+    MovieFilterComponent
+  ],
 })
 export class MovieModule {}

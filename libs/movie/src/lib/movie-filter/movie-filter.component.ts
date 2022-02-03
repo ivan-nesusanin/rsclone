@@ -27,6 +27,7 @@ export class MovieFilterComponent implements OnInit {
       this.ourMovies = response;
       this.addGenreItem();
       this.addCountryItem();
+      // console.log(this.ourMovies)
     });
 
     this.form = new FormGroup({

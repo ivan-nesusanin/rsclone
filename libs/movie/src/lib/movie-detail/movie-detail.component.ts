@@ -16,6 +16,7 @@ import { MovieService } from '@clone/services';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class MovieDetailComponent implements OnInit {
   public id = 0;
   public movieId: Partial<MovieId> = {};
@@ -27,13 +28,19 @@ export class MovieDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // console.log(this.route.snapshot.url[0]);
     this.id = this.route.snapshot.params['id'];
+    // this.id = +this.route.snapshot.url[0].path;
 
     this.movieService.getMovieId(this.id).subscribe((response) => {
       this.movieId = response;
-      console.log(this.movieId);
+      // console.log(this.movieId);
       this.cdr.detectChanges();
     });
+
+    // this.movieService.getMovieFromOurApi().subscribe((response) => {
+    //   this.movieId = response;
+    // console.log(this.movieId);
+    //   this.cdr.detectChanges();
+    // });
   }
 }

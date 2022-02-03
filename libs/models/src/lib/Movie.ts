@@ -1,19 +1,5 @@
-export interface Movie {
-  countries: [];
-  filmId: number;
-  filmLength: string;
-  genres: Genre[];
-  nameEn: string;
-  nameRu: string;
-  posterUrl: string;
-  posterUrlPreview: string;
-  rating: string;
-  ratingChange: object;
-  ratingVoteCount: number;
-  year: string;
-}
-
 export interface MovieId {
+  _id: string;
   kinopoiskId: number;
   imdbId:	string;
   nameRu:	string;
@@ -58,11 +44,6 @@ export interface MovieId {
   completed:	boolean;
 }
 
-export interface MovieResponse {
-  pageCount: number;
-  films: Partial<Movie>[];
-}
-
 export interface Genre {
   genre: string;
 }
@@ -70,3 +51,23 @@ export interface Genre {
 export interface Country {
   country: string;
 }
+
+// export interface MovieResponse {
+//   pageCount: number;
+//   films: Partial<Movie>[];
+// }
+
+// export interface Movie {
+//   countries: [];
+//   filmId: number;
+//   filmLength: string;
+//   genres: Genre[];
+//   nameEn: string;
+//   nameRu: string;
+//   posterUrl: string;
+//   posterUrlPreview: string;
+//   rating: string;
+//   ratingChange: object;
+//   ratingVoteCount: number;
+//   year: string;
+// }
