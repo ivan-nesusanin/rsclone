@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MovieId } from '@clone/models';
 import { MovieService } from '@clone/services';
 
@@ -10,9 +11,11 @@ import { MovieService } from '@clone/services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MovieFilterComponent implements OnInit {
-  public movieAll: MovieId[] = [];
+  public ourMovies: MovieId[] = [];
   public arrGenres: string[] = [];
   public arrCountries: string[] = [];
+  public arrFiltered: string[] = [];
+  form!: FormGroup;
 
   constructor(
     private movieService: MovieService,
@@ -21,14 +24,19 @@ export class MovieFilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieService.getMovieFromOurApi().subscribe((response) => {
-      this.movieAll = response;
-      this.getGenreItem();
-      this.getCountryItem();
+      this.ourMovies = response;
+      this.addGenreItem();
+      this.addCountryItem();
+    });
+
+    this.form = new FormGroup({
+      genre: new FormControl('Жанры:'),
+      country: new FormControl('Страны:')
     });
   }
 
-  getGenreItem(): void {
-    this.movieAll.map((item) => {
+  addGenreItem(): void {
+    this.ourMovies.map((item) => {
       item.genres.forEach((arr) => {
         if (!this.arrGenres.includes(arr.genre)) {
           this.arrGenres.push(arr.genre);
@@ -38,8 +46,8 @@ export class MovieFilterComponent implements OnInit {
     })
   }
 
-  getCountryItem(): void {
-    this.movieAll.map((item) => {
+  addCountryItem(): void {
+    this.ourMovies.map((item) => {
       item.countries.forEach((arr) => {
         if (!this.arrCountries.includes(arr.country)) {
           this.arrCountries.push(arr.country);
@@ -47,5 +55,14 @@ export class MovieFilterComponent implements OnInit {
         }
       })
     })
+  }
+
+  getGenre(): void {
+    console.log(this.form.value.genre);
+
+  }
+
+  getCountry(): void {
+    console.log(this.form.value.country);
   }
 }

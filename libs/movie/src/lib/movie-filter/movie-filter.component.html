@@ -1,8 +1,8 @@
 <section>
   <div class="container">
-    <div class="row">
+    <div class="row" [formGroup]="form">
       <div class="col-md-3">
-        <select
+        <select formControlName="genre" (change)="getGenre()"
           class="form-select form-select-md mb-4"
           aria-label=".form-select-lg example"
         >
@@ -11,7 +11,7 @@
         </select>
       </div>
       <div class="col-md-3">
-        <select
+        <select formControlName="country" (change)="getCountry()"
           class="form-select form-select-md"
           aria-label=".form-select-lg example"
         >
