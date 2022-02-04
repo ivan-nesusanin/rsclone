@@ -42,7 +42,7 @@ export class TopMovieComponent implements OnInit {
 
   sortRating(): void {
     this.sortArr = this.ourMovies.sort( (a, b) => b.ratingKinopoisk - a.ratingKinopoisk ).slice(0, 100);
-    // console.log(this.sortArr)
     this.cdr.detectChanges();
+    // console.log(this.sortArr)
   }
 }
