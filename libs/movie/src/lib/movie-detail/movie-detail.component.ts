@@ -20,6 +20,7 @@ import { MovieService } from '@clone/services';
 export class MovieDetailComponent implements OnInit {
   public id = 0;
   public movieId: Partial<MovieId> = {};
+  public age? = '';
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -33,7 +34,10 @@ export class MovieDetailComponent implements OnInit {
 
     this.movieService.getMovieId(this.id).subscribe((response) => {
       this.movieId = response;
+      this.cdr.detectChanges();
       // console.log(this.movieId);
+      this.age = this.movieId.ratingAgeLimits?.slice(3);
+      console.log(this.age)
       this.cdr.detectChanges();
     });
 
