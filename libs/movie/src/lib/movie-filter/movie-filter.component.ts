@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MovieId } from '@clone/models';
-import { MovieService } from '@clone/services';
+import { MovieFilter, MovieService } from '@clone/services';
 
 @Component({
   selector: 'clone-movie-filter',
@@ -11,8 +11,9 @@ import { MovieService } from '@clone/services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MovieFilterComponent implements OnInit {
+  @Output() changeFilter = new EventEmitter<MovieFilter>()
   public ourMovies: MovieId[] = [];
-  public arrGenres: string[] = [];
+  public arrGenres: string[] = ['Детективы', 'Фантастика'];
   public arrCountries: string[] = [];
   public arrFiltered: string[] = [];
   form!: FormGroup;
@@ -23,17 +24,25 @@ export class MovieFilterComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.movieService.getMovieFromOurApi().subscribe((response) => {
+    /* this.addGenreItem(); */
+    this.addCountryItem();
+    /* this.movieService.getMovieFromOurApi().subscribe((response) => {
       this.ourMovies = response;
-      this.addGenreItem();
-      this.addCountryItem();
-      // console.log(this.ourMovies)
-    });
+      console.log(this.ourMovies)
+    }); */
 
     this.form = new FormGroup({
-      genre: new FormControl('Жанры:'),
-      country: new FormControl('Страны:')
+      genre: new FormControl([]),
+      country: new FormControl([]),
+      year: new FormControl([]),
+      rate: new FormControl([])
     });
+    this.form.valueChanges.subscribe(
+      (res) => {
+        console.log('fg', res)
+        this.changeFilter.emit(res);
+      }
+    )
   }
 
   addGenreItem(): void {
@@ -58,12 +67,11 @@ export class MovieFilterComponent implements OnInit {
     })
   }
 
-  getGenre(): void {
-    console.log(this.form.value.genre);
-
-  }
-
   getCountry(): void {
     console.log(this.form.value.country);
+  }
+
+  getGenre(): void {
+    console.log(this.form.value.genre);
   }
 }

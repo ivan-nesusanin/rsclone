@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { Route, RouterModule } from '@angular/router';
 import { TopMovieComponent } from './top-movie/top-movie.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ComponentsModule } from '@clone/components';
 
 const homeRoutes: Route[] = [
   { path: '', component: HomePageComponent },
@@ -14,6 +15,7 @@ const homeRoutes: Route[] = [
     CommonModule,
     RouterModule.forChild(homeRoutes),
     NgxPaginationModule,
+    ComponentsModule
   ],
   declarations: [
     HomePageComponent,
