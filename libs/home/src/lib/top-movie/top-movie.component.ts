@@ -2,33 +2,25 @@ import {
   Component,
   OnInit,
   ViewEncapsulation,
-  ChangeDetectionStrategy,
-  // ChangeDetectorRef
+  ChangeDetectionStrategy
 } from '@angular/core';
-// import {/*  Movie, */ MovieId } from '@clone/models';
-import { MovieService, HomePageService } from '@clone/services';
+import { MovieService } from '@clone/services';
 
 @Component({
   selector: 'clone-top-movie',
   templateUrl: './top-movie.component.html',
-  providers: [MovieService, HomePageService],
   styleUrls: ['./top-movie.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class TopMovieComponent implements OnInit {
-  p = 1;
-  // public ourMovies: MovieId[] = [];
+  p1 = 1;
 
-
-  constructor(
-    // public movieService: MovieService,
-    public homePageService: HomePageService,
-    /* private readonly cdr: ChangeDetectorRef */) {}
+  constructor(public movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.homePageService.sortRating();
-    // this.movieService.getMovieFromOurApi();
+    this.movieService.getMovieFromOurApi();
+    this.movieService.sortRating();
   }
 }

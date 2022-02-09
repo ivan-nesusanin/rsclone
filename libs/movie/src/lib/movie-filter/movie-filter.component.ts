@@ -26,10 +26,6 @@ export class MovieFilterComponent implements OnInit {
   ngOnInit(): void {
     /* this.addGenreItem(); */
     this.addCountryItem();
-    /* this.movieService.getMovieFromOurApi().subscribe((response) => {
-      this.ourMovies = response;
-      console.log(this.ourMovies)
-    }); */
 
     this.form = new FormGroup({
       genre: new FormControl([]),

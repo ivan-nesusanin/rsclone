@@ -1,5 +1,4 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@angular/core';
-import { MovieId } from '@clone/models';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { MovieService } from '@clone/services';
 
 @Component({
@@ -11,27 +10,12 @@ import { MovieService } from '@clone/services';
 })
 export class BlockOnHomePageComponent implements OnInit {
   p = 1;
-  // public movies: Partial<Movie>[] = [];
-  public ourMovies: MovieId[] = [];
-  public sortArr: MovieId[] = [];
-
 
   constructor(
-    private movieService: MovieService,
-    private readonly cdr: ChangeDetectorRef) {}
+    public movieService: MovieService) {}
 
   ngOnInit(): void {
-    // this.movieService.getMovie().subscribe(({ films }) => {
-    //   this.movies = films;
-    //   this.cdr.detectChanges();
-    // });
-
-    this.movieService.getMovieFromOurApi()
-  }
-
-  sortRating(): void {
-    this.sortArr = this.ourMovies.sort( (a, b) => b.ratingKinopoisk - a.ratingKinopoisk ).slice(0, 100);
-    this.cdr.detectChanges();
-    // console.log(this.sortArr)
+    this.movieService.getMovieFromOurApi();
+    this.movieService.filterByAge();
   }
 }
