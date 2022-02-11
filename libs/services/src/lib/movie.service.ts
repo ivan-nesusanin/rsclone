@@ -49,14 +49,12 @@ export class MovieService {
   }
 
   sortRating(): void {
-    this.getMovieFromOurApi();
-    console.log(this.movies)
     this.sortArr = (this.movies).sort(
       (a, b) => b.ratingKinopoisk - a.ratingKinopoisk).slice(0, 100);
+      console.log(this.movies)
   }
 
   filterByAge(): void {
-    this.getMovieFromOurApi();
     this.moviesForKids = (this.movies).filter(
       (item) => item.ratingAgeLimits !== null && +(item.ratingAgeLimits.slice(3)) < 12).slice(0, 50);
       console.log(this.movies)

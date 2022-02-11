@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { MovieService } from '@clone/services';
 
 @Component({
   selector: 'clone-home-page',
@@ -9,7 +10,9 @@ import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit } from '@
 })
 export class HomePageComponent /* implements OnInit */ {
 
-  // constructor() {}
+  constructor(public movieService: MovieService) {}
 
-  // ngOnInit(): void {}
+  ngOnInit(): void {
+    this.movieService.getMovieFromOurApi();
+  }
 }

@@ -2,7 +2,12 @@ import {
   Component,
   OnInit,
   ViewEncapsulation,
+<<<<<<< HEAD
   ChangeDetectionStrategy
+=======
+  ChangeDetectionStrategy,
+  AfterViewChecked
+>>>>>>> f1e903ce412b9218e3364cb0e6d5d6ac1765be1d
 } from '@angular/core';
 import { MovieService } from '@clone/services';
 
@@ -23,4 +28,5 @@ export class TopMovieComponent implements OnInit {
     this.movieService.getMovieFromOurApi();
     this.movieService.sortRating();
   }
+
 }
