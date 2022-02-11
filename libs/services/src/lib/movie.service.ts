@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { ApplicationRef, ChangeDetectorRef, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MovieId } from '@clone/models';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 export interface MovieFilter {
   [key: string]: string[];
@@ -13,8 +14,13 @@ export class MovieService {
   public filteredMovies: MovieId[] = [];
   public sortArr: MovieId[] = [];
   public moviesForKids: MovieId[] = [];
+  public loading$ = new BehaviorSubject(true);
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient, private readonly cdr: ApplicationRef) {
+    if (this.movies.length < 1) {
+      this.getMovieFromOurApi();
+    }
+  }
 
   getMovieId(id: number) {
     return this.http.get<MovieId>(
@@ -28,12 +34,8 @@ export class MovieService {
     );
   }
 
-  getMovieFromOurApi(): void {
-    this.http.get<MovieId[]>('http://localhost:3333/api/movie').subscribe(
-      (res) => {
-        this.movies = res;
-      }
-    );
+  getMovieFromOurApi(): Observable<MovieId[]> {
+    return this.http.get<MovieId[]>('http://localhost:3333/api/movie');
   }
 
   filter(filterForm: MovieFilter) {
@@ -49,9 +51,17 @@ export class MovieService {
   }
 
   sortRating(): void {
-    this.sortArr = (this.movies).sort(
-      (a, b) => b.ratingKinopoisk - a.ratingKinopoisk).slice(0, 100);
-      console.log(this.movies)
+    this.loading$.subscribe(
+      (res) => {
+        if (!res) {
+          console.log('sort', this.movies)
+          this.sortArr = (this.movies).sort(
+            (a, b) => b.ratingKinopoisk - a.ratingKinopoisk).slice(0, 100);
+          console.log(this.sortArr)
+          this.cdr.tick();
+        }
+      }
+    )
   }
 
   filterByAge(): void {
