@@ -4,7 +4,9 @@ import {
   ViewEncapsulation,
   ChangeDetectionStrategy,
   AfterViewChecked,
+  Input,
 } from '@angular/core';
+import { MovieId } from '@clone/models';
 import { MovieService } from '@clone/services';
 
 @Component({
@@ -14,13 +16,15 @@ import { MovieService } from '@clone/services';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TopMovieComponent implements OnInit {
-  p1 = 1;
-
-  constructor(public movieService: MovieService) {}
-
-  ngOnInit(): void {
-    this.movieService.getMovieFromOurApi();
-    this.movieService.sortRating();
+export class TopMovieComponent {
+  @Input()
+  set movieSortedByRating(movies: MovieId[]) {
+    console.log('input', movies);
+    this._movieSortedByRating = movies;
   }
+  get movieSortedByRating() {
+    return this._movieSortedByRating;
+  }
+  private _movieSortedByRating: MovieId[] = [];
+  p1 = 1;
 }

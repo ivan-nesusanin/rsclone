@@ -15,7 +15,6 @@ export class BlockOnHomePageComponent implements OnInit {
     public movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.movieService.getMovieFromOurApi();
     this.movieService.filterByAge();
   }
 }

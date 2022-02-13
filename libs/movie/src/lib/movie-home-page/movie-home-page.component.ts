@@ -8,14 +8,10 @@ import { MovieFilter, MovieService } from '@clone/services';
   styleUrls: ['./movie-home-page.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class MovieHomePageComponent implements OnInit {
+export class MovieHomePageComponent {
   // public ourMovies: Partial<MovieId>[] = [];
 
   constructor(public movieService: MovieService) {}
-
-  ngOnInit(): void {
-    this.movieService.getMovieFromOurApi();
-  }
 
   onChangeFilter(formValue: MovieFilter) {
     this.movieService.filter(formValue);

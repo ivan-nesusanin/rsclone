@@ -8,7 +8,9 @@
       </div>
       <div class="col-md-7 search-container mb-3">
         <div class="input-group">
-          <input type="search" class="form-control" placeholder="ПОИСК ..." />
+          <input type="search" class="form-control" placeholder="ПОИСК ..."
+            [formControl]="searchValue"
+          />
           <button
             class="btn btn-outline-secondary"
             type="button"
