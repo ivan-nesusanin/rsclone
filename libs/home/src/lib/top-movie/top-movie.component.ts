@@ -2,7 +2,8 @@ import {
   Component,
   OnInit,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  AfterViewChecked,
 } from '@angular/core';
 import { MovieService } from '@clone/services';
 
@@ -11,9 +12,8 @@ import { MovieService } from '@clone/services';
   templateUrl: './top-movie.component.html',
   styleUrls: ['./top-movie.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class TopMovieComponent implements OnInit {
   p1 = 1;
 
