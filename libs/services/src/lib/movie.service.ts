@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { ApplicationRef, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MovieId } from '@clone/models';
 import { Observable } from 'rxjs';
@@ -12,10 +12,12 @@ export interface MovieFilter {
 export class MovieService {
   public movies: MovieId[] = [];
   public filteredMovies: MovieId[] = [];
-  // public sortArr: MovieId[] = [];
-  public moviesForKids: MovieId[] = [];
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient, private readonly cdr: ApplicationRef) {
+    if (this.movies.length < 1) {
+      this.getMovieFromOurApi();
+    }
+  }
 
   getMovieId(id: number) {
     return this.http.get<MovieId>(
@@ -44,12 +46,6 @@ export class MovieService {
       }
     )
   }
-
-  // filterByAge(): void {
-  //   this.moviesForKids = (this.movies).filter(
-  //     (item) => item.ratingAgeLimits !== null && +(item.ratingAgeLimits.slice(3)) < 12).slice(0, 50);
-  //     console.log(this.movies)
-  // }
 }
 
 

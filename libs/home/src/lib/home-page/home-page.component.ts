@@ -20,9 +20,10 @@ export class HomePageComponent implements OnInit {
       (res) => {
         this.topMovie = (res).sort(
           (a, b) => b.ratingKinopoisk - a.ratingKinopoisk).slice(0, 100);
+          this.cdr.detectChanges();
         this.familyMovie = (res).filter(
           (item) => item.ratingAgeLimits !== null && +(item.ratingAgeLimits.slice(3)) < 12).slice(0, 50);
-        this.cdr.detectChanges()
+          this.cdr.detectChanges();
       }
     )
   }
