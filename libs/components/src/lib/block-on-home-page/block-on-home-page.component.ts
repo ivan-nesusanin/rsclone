@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { MovieService } from '@clone/services';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input } from '@angular/core';
+import { MovieId } from '@clone/models';
 
 @Component({
   selector: 'clone-block-on-home-page',
@@ -8,14 +8,15 @@ import { MovieService } from '@clone/services';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BlockOnHomePageComponent implements OnInit {
+export class BlockOnHomePageComponent {
   p = 1;
 
-  constructor(
-    public movieService: MovieService) {}
-
-  ngOnInit(): void {
-    this.movieService.getMovieFromOurApi();
-    this.movieService.filterByAge();
+  @Input()
+  set movieSortedByAge(movies: MovieId[]) {
+    this._movieSortedByAge = movies;
   }
+  get movieSortedByAge() {
+    return this._movieSortedByAge;
+  }
+  public _movieSortedByAge: MovieId[] = [];
 }

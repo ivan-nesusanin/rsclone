@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { MovieId } from '@clone/models';
 import { MovieService } from '@clone/services';
 
 @Component({
@@ -9,10 +10,20 @@ import { MovieService } from '@clone/services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent implements OnInit {
+  public topMovie: MovieId[] = [];
+  public familyMovie: MovieId[] = [];
 
-  constructor(public movieService: MovieService) {}
+  constructor(public movieService: MovieService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.movieService.getMovieFromOurApi();
+    this.movieService.getMovieFromOurApi().subscribe(
+      (res) => {
+        this.topMovie = (res).sort(
+          (a, b) => b.ratingKinopoisk - a.ratingKinopoisk).slice(0, 100);
+        this.familyMovie = (res).filter(
+          (item) => item.ratingAgeLimits !== null && +(item.ratingAgeLimits.slice(3)) < 12).slice(0, 50);
+        this.cdr.detectChanges()
+      }
+    )
   }
 }

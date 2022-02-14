@@ -1,11 +1,5 @@
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-  AfterViewChecked
-} from '@angular/core';
-import { MovieService } from '@clone/services';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input } from '@angular/core';
+import { MovieId } from '@clone/models';
 
 @Component({
   selector: 'clone-top-movie',
@@ -15,14 +9,15 @@ import { MovieService } from '@clone/services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class TopMovieComponent implements OnInit {
+export class TopMovieComponent {
   p1 = 1;
 
-  constructor(public movieService: MovieService) {}
-
-  ngOnInit(): void {
-    this.movieService.getMovieFromOurApi();
-    this.movieService.sortRating();
+  @Input()
+  set movieSortedByRating(movies: MovieId[]) {
+    this._movieSortedByRating = movies;
   }
-
+  get movieSortedByRating() {
+    return this._movieSortedByRating
+  }
+  private _movieSortedByRating: MovieId[] = [];
 }
