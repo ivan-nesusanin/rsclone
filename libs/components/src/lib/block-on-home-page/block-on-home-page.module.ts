@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BlockOnHomePageComponent } from './block-on-home-page.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   imports: [
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule
   ],
   exports: [
     BlockOnHomePageComponent

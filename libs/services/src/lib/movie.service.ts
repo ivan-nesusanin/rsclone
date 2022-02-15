@@ -1,7 +1,7 @@
-import { ApplicationRef, ChangeDetectorRef, Injectable } from '@angular/core';
+import { ApplicationRef, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MovieId } from '@clone/models';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 export interface MovieFilter {
   [key: string]: string[];
@@ -12,9 +12,6 @@ export interface MovieFilter {
 export class MovieService {
   public movies: MovieId[] = [];
   public filteredMovies: MovieId[] = [];
-  public sortArr: MovieId[] = [];
-  public moviesForKids: MovieId[] = [];
-  public loading$ = new BehaviorSubject(true);
 
   constructor(
     private readonly http: HttpClient,
@@ -49,29 +46,6 @@ export class MovieService {
         currentFilter.includes(movie[key as keyof MovieId]?.toString() || '')
       );
     });
-  }
-
-  sortRating(): void {
-    this.loading$.subscribe((res) => {
-      if (!res) {
-        console.log('sort', this.movies);
-        this.sortArr = this.movies
-          .sort((a, b) => b.ratingKinopoisk - a.ratingKinopoisk)
-          .slice(0, 100);
-        console.log(this.sortArr);
-        this.cdr.tick();
-      }
-    });
-  }
-
-  filterByAge(): void {
-    this.moviesForKids = this.movies
-      .filter(
-        (item) =>
-          item.ratingAgeLimits !== null && +item.ratingAgeLimits.slice(3) < 12
-      )
-      .slice(0, 50);
-    console.log(this.movies);
   }
 }
 

@@ -2,7 +2,14 @@
   <div class="container">
     <div class="row">
       <h3 class="mb-3">Топ-100 фильмов по рейтингу Кинопоиска</h3>
-      <div *ngFor="let item of movieSortedByRating; let i = index" class="card col-2 mb-3">
+      <div
+        *ngFor="
+          let item of movieSortedByRating
+            | paginate: { itemsPerPage: 6, currentPage: p1, id: 'first' };
+          let i = index
+        "
+        class="card col-2 mb-3"
+      >
         <a [routerLink]="['movie', item.kinopoiskId]">
           <img
             src="{{ item?.posterUrl || 'n/a' }}"
@@ -10,19 +17,25 @@
             alt="poster"
         /></a>
         <div class="card-body">
-          <h6 class="card-title text-dark fw-bolder">{{ i+1 }}. {{ item?.nameRu || 'n/a' }}</h6>
-          <hr>
+          <h6 class="card-title text-dark fw-bolder">
+            {{ i + 1 }}. {{ item?.nameRu || 'n/a' }}
+          </h6>
+          <hr />
           <p class="text-body fs-6">
-            <span class="text-success fw-bolder fs-5">{{ item.ratingKinopoisk }}</span>
+            <span class="text-success fw-bolder fs-5">{{
+              item.ratingKinopoisk
+            }}</span>
             ({{ item.ratingKinopoiskVoteCount }})
           </p>
         </div>
       </div>
-      <pagination-controls class="fs-6"
-      (pageChange)="p1 = $event"
-      id="first"
-      previousLabel="Предыдущая"
-      nextLabel="Следующая">
+      <pagination-controls
+        class="fs-6"
+        (pageChange)="p1 = $event"
+        id="first"
+        previousLabel="Предыдущая"
+        nextLabel="Следующая"
+      >
       </pagination-controls>
     </div>
   </div>

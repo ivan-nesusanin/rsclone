@@ -9,7 +9,7 @@ import { UserModule } from './user/user.module';
     MovieModule,
     UserModule,
     MongooseModule.forRoot(
-      `mongodb+srv://rsstudent:FJLjwzI0gaKzGEok@cluster0.w9p60.mongodb.net/rsclone?retryWrites=true&w=majority`
+      `mongodb+srv://rsstudent:FJLjwzI0gaKzGEok@cluster0.w9p60.mongodb.net/movies?retryWrites=true&w=majority`
     ),
   ],
 })
