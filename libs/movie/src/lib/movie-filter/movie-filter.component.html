@@ -1,26 +1,22 @@
 <section>
   <div class="container">
-    <div class="row">
+    <div class="row" [formGroup]="form">
       <div class="col-md-3">
-        <select
+        <select formControlName="genre" (change)="getGenre()"
           class="form-select form-select-md mb-4"
           aria-label=".form-select-lg example"
         >
           <option selected>Жанры:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option *ngFor="let genre of arrGenres" value="{{ genre }}">{{ genre }}</option>
         </select>
       </div>
       <div class="col-md-3">
-        <select
+        <select formControlName="country" (change)="getCountry()"
           class="form-select form-select-md"
           aria-label=".form-select-lg example"
         >
           <option selected>Страны:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option *ngFor="let country of arrCountries" value="{{ country }}">{{ country }}</option>
         </select>
       </div>
       <div class="col-md-3">
@@ -29,9 +25,12 @@
           aria-label=".form-select-lg example"
         >
           <option selected>Годы:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="1">2020 ...</option>
+          <option value="2">2010 - 2019</option>
+          <option value="3">2000 - 2009</option>
+          <option value="4">1990 - 1999</option>
+          <option value="5">1980 - 1989</option>
+          <option value="6">... 1979</option>
         </select>
       </div>
       <div class="col-md-3">
@@ -40,9 +39,10 @@
           aria-label=".form-select-lg example"
         >
           <option selected>Рейтинг:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="9">Больше 9</option>
+          <option value="8">Больше 8</option>
+          <option value="7">Больше 7</option>
+          <option value="6">Больше 6</option>
         </select>
       </div>
     </div>

@@ -1,12 +1,14 @@
-<clone-movie-filter></clone-movie-filter>
+<clone-movie-filter
+  (changeFilter)="onChangeFilter($event)"
+></clone-movie-filter>
 <section class="mt-4">
-  <div class="container">
-    <div class="row">
-      <div *ngFor="let item of ourMovies" class="card col-3">
+  <div class="container-fluid">
+    <div class="row gap-3 justify-content-center">
+      <div *ngFor="let item of movies" class="card col-2">
         <a [routerLink]="[item.kinopoiskId]">
           <img
             src="{{ item?.posterUrl || 'n/a' }}"
-            class="card-img-top"
+            class="card-img-top mt-2"
             alt="poster"
         /></a>
         <div class="card-body">
@@ -29,7 +31,7 @@
     </div>
   </div>
 </section>
-<section class="mt-4">
+<!-- <section class="mt-4">
   <div class="container">
     <div class="row">
       <div *ngFor="let item of movies" class="card col-3">
@@ -56,4 +58,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->

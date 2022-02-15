@@ -1,13 +1,20 @@
-<!-- TODO: решить по поводу заполнения домашней страницы, bootstrap -->
-
 <div class="main-container">
+  <clone-top-movie
+  [movieSortedByRating]="topMovie"
+  ></clone-top-movie>
+  <clone-block-on-home-page
+  [movieSortedByAge]="familyMovie"
+  ></clone-block-on-home-page>
   <section class="container border">
-    <h2>Заголовок 1</h2>
+    <h2>Рекомендуем сериалы</h2>
   </section>
   <section class="container border">
-    <h2>Заголовок 2</h2>
+    <h2>Новинки</h2>
   </section>
   <section class="container border">
-    <h2>Заголовок 3</h2>
+    <h2>Жанры</h2>
+  </section>
+  <section class="container border">
+    <h2>Любимые режиссеры</h2>
   </section>
 </div>

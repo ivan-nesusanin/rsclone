@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Movie, MovieId } from '@clone/models';
-import { MovieService } from '@clone/services';
+import { MovieId } from '@clone/models';
+// import { */ MovieId } from '@clone/models';
+import { MovieFilter, MovieService } from '@clone/services';
 
 @Component({
   selector: 'clone-movie-home-page',
@@ -8,20 +9,20 @@ import { MovieService } from '@clone/services';
   styleUrls: ['./movie-home-page.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class MovieHomePageComponent implements OnInit {
-  public movies: Partial<Movie>[] = [];
-  public ourMovies: Partial<MovieId>[] = [];
+export class MovieHomePageComponent implements OnInit{
+  // public ourMovies: Partial<MovieId>[] = [];
+  public movies: MovieId[] = [];
 
-  constructor(private movieService: MovieService) {}
 
+  constructor(public movieService: MovieService) {}
   ngOnInit(): void {
-    this.movieService.getMovie().subscribe(({ films }) => {
-      this.movies = films;
-      console.log(this.movies);
-    });
-    this.movieService.getMovieFromOurApi().subscribe((response) => {
-      this.ourMovies = response;
-      console.log(this.ourMovies);
-    });
+    this.movieService.getMovieFromOurApi().subscribe(
+      (res) => {
+        this.movies = res;
+    }
+  )}
+
+  onChangeFilter(formValue: MovieFilter) {
+    this.movieService.filter(formValue);
   }
 }

@@ -13,13 +13,14 @@ import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { MovieService } from './movie.service';
 import { Movie } from './schemas/movie.schema';
+import { MovieId } from '@clone/models';
 
 @Controller('movie')
 export class MovieController {
   constructor(private readonly movieService: MovieService) {}
 
   @Get()
-  getAll(): Promise<Movie[]> {
+  getAll(): Promise<MovieId[]> {
     return this.movieService.getAll();
   }
 
