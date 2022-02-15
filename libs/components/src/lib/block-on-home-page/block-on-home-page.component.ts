@@ -1,4 +1,9 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+  Input,
+} from '@angular/core';
 import { MovieId } from '@clone/models';
 
 @Component({
@@ -6,7 +11,7 @@ import { MovieId } from '@clone/models';
   templateUrl: './block-on-home-page.component.html',
   styleUrls: ['./block-on-home-page.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BlockOnHomePageComponent {
   p = 1;

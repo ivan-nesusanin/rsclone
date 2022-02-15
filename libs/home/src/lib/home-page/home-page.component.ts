@@ -7,7 +7,7 @@ import { MovieService } from '@clone/services';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent implements OnInit {
   public topMovie: MovieId[] = [];
