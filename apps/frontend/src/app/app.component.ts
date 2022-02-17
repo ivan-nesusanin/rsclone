@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { SearchService } from '@clone/services';
 import { debounceTime } from 'rxjs';
 
 @Component({
@@ -9,14 +10,20 @@ import { debounceTime } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'Clone Kinopoisk';
-  headerMenu = ['Фильмы', 'Сериалы', 'Персоны', 'Рецензии', 'События'];
   searchValue = new FormControl('');
+  // searchValue = '';
+
+  constructor(private searchService: SearchService) {}
 
   ngOnInit(): void {
-      this.searchValue.valueChanges.pipe(
-        debounceTime(1500)
-      ).subscribe(
-        (res) => console.log('FC', res)
-      )
+    this.searchValue.valueChanges.pipe(
+      debounceTime(1000)
+    ).subscribe(
+      (res) => {
+        console.log(res)
+        this.searchService.searchMovies(res);
+      }
+    )
   }
 }
+

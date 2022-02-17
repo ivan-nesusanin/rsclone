@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 // import { authRoutes, AuthModule } from '@clone/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { SearchPipe } from 'libs/pipes/src/lib/search.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+    // SearchPipe
+  ],
   imports: [
     BrowserModule,
     // RouterModule.forRoot([{ path: 'auth', children: authRoutes }], {
@@ -18,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     // AuthModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
