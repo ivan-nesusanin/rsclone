@@ -4,7 +4,7 @@ import { SearchResultComponent } from './search-result.component';
 import { Route, RouterModule } from '@angular/router';
 
 export const searchResultRoutes: Route[] = [
-  { path: 'search-results', component: SearchResultComponent },
+  { path: 'search-result', component: SearchResultComponent },
 ];
 
 @NgModule({
@@ -14,7 +14,10 @@ export const searchResultRoutes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(searchResultRoutes)
-  ]
+  ],
+  exports: [
+    SearchResultComponent
+  ],
 })
 
 export class SearchResultModule { }

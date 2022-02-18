@@ -11,7 +11,6 @@ import { debounceTime } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'Clone Kinopoisk';
   searchValue = new FormControl('');
-  // searchValue = '';
 
   constructor(private searchService: SearchService) {}
 
@@ -20,10 +19,10 @@ export class AppComponent implements OnInit {
       debounceTime(1000)
     ).subscribe(
       (res) => {
-        console.log(res)
-        this.searchService.searchMovies(res);
+        this.searchService.getEnterValue(res);
       }
     )
+    this.searchService.getMoviesBase();
   }
 }
 

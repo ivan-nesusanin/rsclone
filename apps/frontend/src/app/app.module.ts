@@ -7,19 +7,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { SearchPipe } from 'libs/pipes/src/lib/search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent
-    // SearchPipe
   ],
   imports: [
     BrowserModule,
-    // RouterModule.forRoot([{ path: 'auth', children: authRoutes }], {
-    //   initialNavigation: 'enabled', // initialNavigation: 'enabledBlocking',
-    // }),
-    // AuthModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,

@@ -2,21 +2,31 @@
   <div class="container">
     <div class="row">
       <h3 class="mb-3">Смотреть всей семьей</h3>
-      <div *ngFor="let item of movieSortedByAge | paginate: { itemsPerPage: 6, currentPage: p }" class="card col-2 mb-3">
-        <a [routerLink]="['movie', item.kinopoiskId]">
+      <div
+        *ngFor="
+          let item of movieSortedByAge
+            | paginate: { itemsPerPage: 6, currentPage: p }
+        "
+        class="card col-sm-6 col-md-4 col-lg-2 mb-3"
+      >
+        <a [routerLink]="['movie', item._id]">
           <img
             src="{{ item?.posterUrl || 'n/a' }}"
             class="card-img-top mt-3"
             alt="poster"
         /></a>
         <div class="card-body">
-          <h6 class="card-title text-dark fw-bolder">{{ item?.nameRu || 'n/a' }}</h6>
+          <h6 class="card-title text-dark fw-bolder">
+            {{ item?.nameRu || 'n/a' }}
+          </h6>
         </div>
       </div>
-      <pagination-controls class="fs-6"
-      (pageChange)="p = $event"
-      previousLabel="Предыдущая"
-      nextLabel="Следующая"></pagination-controls>
+      <pagination-controls
+        class="fs-6"
+        (pageChange)="p = $event"
+        previousLabel="Предыдущая"
+        nextLabel="Следующая"
+      ></pagination-controls>
     </div>
   </div>
 </section>

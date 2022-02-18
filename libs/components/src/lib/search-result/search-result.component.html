@@ -1,8 +1,8 @@
 <section class="mt-4">
   <div class="container-fluid">
     <div class="row gap-3 justify-content-center">
-      <!-- <div *ngFor="let item of movies" class="card col-2">
-        <a [routerLink]="[item.kinopoiskId]">
+      <div *ngFor="let item of searchResult" class="card col-sm-5 col-md-3 col-lg-2">
+        <a [routerLink]="['/movie', item._id]">
           <img
             src="{{ item?.posterUrl || 'n/a' }}"
             class="card-img-top mt-2"
@@ -24,7 +24,7 @@
             </ng-container>
           </p>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </section>

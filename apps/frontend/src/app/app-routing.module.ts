@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'categories', pathMatch: 'full' },
   {
     path: '',
     loadChildren: () => import('@clone/home').then((m) => m.HomeModule),
@@ -19,10 +18,10 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('@clone/user').then((m) => m.UserModule),
   },
-  {
-    path: 'film',
-    loadChildren: () => import('@clone/film').then((m) => m.FilmModule),
-  },
+  // {
+  //   path: 'film',
+  //   loadChildren: () => import('@clone/film').then((m) => m.FilmModule),
+  // },
   {
     path: 'movie',
     loadChildren: () => import('@clone/movie').then((m) => m.MovieModule),
