@@ -12,12 +12,10 @@
             alt="poster"
         /></a>
         <div class="card-body">
-          <h6 class="card-title text-dark">{{ item?.nameRu || 'n/a' }}</h6>
-          <p class="text-body">
-            {{ item.ratingKinopoiskVoteCount }} ({{
-              item.ratingKinopoisk
-            }})<br />
-            {{ item.year }}
+          <h6 class="card-title text-dark fw-bolder">{{ item?.nameRu || 'n/a' }}
+            <br> ({{ item.year }})</h6>
+          <p class="text-body fs-6">
+            Рейтинг - {{item.ratingKinopoisk}}
           </p>
           <p>
             <ng-container *ngFor="let genre of item.genres">
