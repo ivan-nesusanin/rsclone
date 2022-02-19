@@ -27,11 +27,11 @@ export class SearchResultComponent implements OnInit, DoCheck {
     });
     this.searchService.enterValueSubject.subscribe((enterValueFromService: any) => {
       this.enterValue = enterValueFromService;
-      console.log(this.enterValue)
+      // console.log(this.enterValue)
     });
     this.searchOnSearchPage();
     this.searchResult = this.searchService.searchMovies()
-    console.log(this.searchResult)
+    // console.log(this.searchResult)
   }
 
   ngDoCheck(): void {
@@ -45,6 +45,6 @@ export class SearchResultComponent implements OnInit, DoCheck {
         return item.nameRu.toLocaleLowerCase().includes(this.enterValue.toLocaleLowerCase())
       })
     }
-    console.log(this.searchResult)
+    // console.log(this.searchResult)
   }
 }

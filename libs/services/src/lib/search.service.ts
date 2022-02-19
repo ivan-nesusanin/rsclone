@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { MovieService } from './movie.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SearchService {
   public movies: MovieId[] = [];
@@ -12,26 +12,39 @@ export class SearchService {
   public enterValueSubject = new Subject();
   public searchMovieSubject = new Subject();
   substr = '';
+  year = '';
 
   constructor(public movieService: MovieService) {}
 
-  getMoviesBase() { // получаю общий массив фильмов
+  getMoviesBase() {
+    // получаю общий массив фильмов
     this.movieService.getMovieFromOurApi().subscribe((res) => {
       this.movies = res;
-      // console.log(this.movies) // работает
+      // console.log(this.movies)
     });
   }
 
-  getEnterValue(enterValue: string) { //получаю строку из формы поиска
-    this.substr = enterValue
-    console.log(this.substr) // работает
-    this.enterValueSubject.next(enterValue)
+  getEnterValue(enterValue: string) {
+    //получаю строку из формы поиска
+    this.substr = enterValue;
+    // console.log(this.substr)
+    this.enterValueSubject.next(enterValue);
   }
 
-  searchMovies() { // пытаюсь получить массив и передать его в компонент на отрисовку
-    this.searchedMovies = this.movies.filter((item) => {
-      return item.nameRu.toLocaleLowerCase().includes(this.substr.toLocaleLowerCase())
-    })
+  getYearValue(yearValue: string) {
+    this.year = yearValue;
+  }
+
+  searchMovies() {
+    this.searchedMovies = this.movies
+      .filter((item) => {
+        return item.nameRu
+          .toLocaleLowerCase()
+          .includes(this.substr.toLocaleLowerCase());
+      })
+      // .filter((item) => {
+      //   return item.year === +this.year;
+      // });
     return this.searchedMovies;
   }
 }
