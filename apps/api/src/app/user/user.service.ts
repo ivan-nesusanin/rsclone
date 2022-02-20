@@ -6,10 +6,27 @@ import { Model } from 'mongoose';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserModel } from '@clone/models';
 
+export type TestUser = any;
 @Injectable()
 export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
-  private user = [];
+  private readonly users = [
+    {
+      userId: 1,
+      username: 'john',
+      password: 'changeme',
+    },
+    {
+      userId: 2,
+      username: 'maria',
+      password: 'guess',
+    },
+  ];
+
+  async findOne(username: string): Promise<TestUser | undefined> {
+    return this.users.find((user) => user.username === username);
+  }
+
   async getAll(): Promise<UserModel[]> {
     return this.userModel.find().exec();
   }

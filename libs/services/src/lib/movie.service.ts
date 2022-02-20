@@ -23,15 +23,7 @@ export class MovieService {
   }
 
   getMovieId(id: number) {
-    return this.http.get<MovieId>(
-      'https://kinopoiskapiunofficial.tech/api/v2.2/films/' + id,
-      {
-        headers: {
-          'X-API-KEY': '9ea108a5-99f0-499a-a907-5373bb1396e6',
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    return this.http.get<MovieId>('http://localhost:3333/api/movie/' + id);
   }
 
   getMovieFromOurApi(): Observable<MovieId[]> {
