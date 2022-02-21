@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MovieId } from '@clone/models';
-// import { */ MovieId } from '@clone/models';
 import { MovieFilter, MovieService } from '@clone/services';
 
 @Component({
@@ -10,7 +9,6 @@ import { MovieFilter, MovieService } from '@clone/services';
   encapsulation: ViewEncapsulation.None,
 })
 export class MovieHomePageComponent implements OnInit {
-  // public ourMovies: Partial<MovieId>[] = [];
   public movies: MovieId[] = [];
 
   constructor(public movieService: MovieService) {}
