@@ -8,9 +8,9 @@
             | paginate: { itemsPerPage: 6, currentPage: p1, id: 'first' };
           let i = index
         "
-        class="card col-2 mb-3"
+        class="card col-sm-6 col-md-4 col-lg-2 mb-3"
       >
-        <a [routerLink]="['movie', item.kinopoiskId]">
+        <a [routerLink]="['movie', item._id]">
           <img
             src="{{ item?.posterUrl || 'n/a' }}"
             class="card-img-top mt-3"
