@@ -24,6 +24,7 @@
     "@nestjs/mongoose": "^9.0.2",
     "@nestjs/passport": "^8.2.1",
     "@nestjs/platform-express": "^8.2.6",
+    "@nestjs/serve-static": "^2.2.2",
     "@nrwl/angular": "^13.4.5",
     "body-parser": "^1.19.1",
     "bootstrap": "^5.1.3",

@@ -1,3 +1,5 @@
+import { CategoryModel } from '..';
+
 export interface MovieId {
   _id: string;
   kinopoiskId: number;
@@ -42,7 +44,6 @@ export interface MovieId {
   serial: boolean;
   shortFilm: boolean;
   completed: boolean;
-  cateegory: Category[];
 }
 
 export interface Genre {
