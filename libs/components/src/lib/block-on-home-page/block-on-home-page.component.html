@@ -1,11 +1,11 @@
 <section class="mt-4">
   <div class="container">
     <div class="row">
-      <h3 class="mb-3">Смотреть всей семьей</h3>
+      <h3 class="mb-3">{{ blockTitle }}</h3>
       <div
         *ngFor="
-          let item of movieSortedByAge
-            | paginate: { itemsPerPage: 6, currentPage: p }
+          let item of arrWithMovie
+            | paginate: { itemsPerPage: 6, currentPage: p, id: id }
         "
         class="card col-sm-6 col-md-4 col-lg-2 mb-3"
       >
@@ -24,6 +24,7 @@
       <pagination-controls
         class="fs-6"
         (pageChange)="p = $event"
+        [id]="id"
         previousLabel="Предыдущая"
         nextLabel="Следующая"
       ></pagination-controls>

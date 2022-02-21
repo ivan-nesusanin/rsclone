@@ -1,18 +1,18 @@
 <div class="main-container">
   <clone-top-movie [movieSortedByRating]="topMovie"></clone-top-movie>
   <clone-block-on-home-page
-    [movieSortedByAge]="familyMovie"
+    [arrWithMovie]="familyMovie"
+    [blockTitle]="familyTitle"
+    [id]="idFamily"
   ></clone-block-on-home-page>
-  <section class="container border">
-    <h2>Рекомендуем сериалы</h2>
-  </section>
-  <section class="container border">
-    <h2>Новинки</h2>
-  </section>
-  <section class="container border">
-    <h2>Жанры</h2>
-  </section>
-  <section class="container border">
-    <h2>Любимые режиссеры</h2>
-  </section>
+  <clone-block-on-home-page
+    [arrWithMovie]="newMovie"
+    [blockTitle]="newMovieTitle"
+    [id]="idNew"
+  ></clone-block-on-home-page>
+  <clone-block-on-home-page
+    [arrWithMovie]="kidsMovie"
+    [blockTitle]="kidsMovieTitle"
+  ></clone-block-on-home-page>
+
 </div>

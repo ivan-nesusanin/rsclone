@@ -17,11 +17,17 @@ export class BlockOnHomePageComponent {
   p = 1;
 
   @Input()
-  set movieSortedByAge(movies: MovieId[]) {
-    this._movieSortedByAge = movies;
+  set arrWithMovie(movies: MovieId[]) {
+    this._arrWithMovie = movies;
   }
-  get movieSortedByAge() {
-    return this._movieSortedByAge;
+  get arrWithMovie() {
+    return this._arrWithMovie;
   }
-  public _movieSortedByAge: MovieId[] = [];
+  public _arrWithMovie: MovieId[] = [];
+
+  @Input()
+  public blockTitle = '';
+
+  @Input() id = '';
+
 }
