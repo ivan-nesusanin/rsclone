@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, /* Output, EventEmitter */ } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MovieId } from '@clone/models';
-import { MovieFilter, MovieService } from '@clone/services';
+import { /* MovieFilter,  */MovieService } from '@clone/services';
 
 @Component({
   selector: 'clone-movie-filter',
@@ -11,9 +11,9 @@ import { MovieFilter, MovieService } from '@clone/services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MovieFilterComponent implements OnInit {
-  @Output() changeFilter = new EventEmitter<MovieFilter>()
-  public ourMovies: MovieId[] = [];
-  public arrGenres: string[] = ['Детективы', 'Фантастика'];
+  // @Output() changeFilter = new EventEmitter<MovieFilter>()
+  public movies: MovieId[] = [];
+  public arrGenres: string[] = [];
   public arrCountries: string[] = [];
   public arrFiltered: string[] = [];
   form!: FormGroup;
@@ -24,25 +24,27 @@ export class MovieFilterComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    /* this.addGenreItem(); */
-    this.addCountryItem();
-
-    this.form = new FormGroup({
-      genre: new FormControl([]),
-      country: new FormControl([]),
-      year: new FormControl([]),
-      rate: new FormControl([])
+    this.movieService.getMovieFromOurApi().subscribe((res) => {
+      this.movies = res;
+      this.addGenreItem();
+      this.addCountryItem();
     });
-    this.form.valueChanges.subscribe(
-      (res) => {
-        console.log('fg', res)
-        this.changeFilter.emit(res);
-      }
-    )
+    this.form = new FormGroup({
+      genre: new FormControl('Жанры:'),
+      country: new FormControl('Страны:'),
+      // year: new FormControl([]),
+      // rate: new FormControl([])
+    });
+    // this.form.valueChanges.subscribe(
+    //   (res) => {
+    //     console.log('fg', res)
+    //     this.changeFilter.emit(res);
+    //   }
+    // )
   }
 
   addGenreItem(): void {
-    this.ourMovies.map((item) => {
+    this.movies.map((item) => {
       item.genres.forEach((arr) => {
         if (!this.arrGenres.includes(arr.genre)) {
           this.arrGenres.push(arr.genre);
@@ -53,7 +55,7 @@ export class MovieFilterComponent implements OnInit {
   }
 
   addCountryItem(): void {
-    this.ourMovies.map((item) => {
+    this.movies.map((item) => {
       item.countries.forEach((arr) => {
         if (!this.arrCountries.includes(arr.country)) {
           this.arrCountries.push(arr.country);
