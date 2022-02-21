@@ -8,7 +8,7 @@
         *ngFor="let item of movies"
         class="card col-xs-6 col-sm-4 col-xl-2 pb-4"
       >
-        <a [routerLink]="[item.kinopoiskId]">
+        <a [routerLink]="[item._id]">
           <img
             src="{{ item?.posterUrl || 'n/a' }}"
             class="card-img-top mt-2"
