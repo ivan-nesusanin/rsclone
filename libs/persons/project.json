@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/persons",
+  "sourceRoot": "libs/persons/src",
+  "prefix": "clone",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/persons"],
+      "options": {
+        "jestConfig": "libs/persons/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/persons/src/**/*.ts",
+          "libs/persons/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

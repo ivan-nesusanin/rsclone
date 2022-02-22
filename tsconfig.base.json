@@ -23,9 +23,11 @@
       "@clone/models": ["libs/models/src/index.ts"],
       "@clone/movie": ["libs/movie/src/index.ts"],
       "@clone/news": ["libs/news/src/index.ts"],
+      "@clone/persons": ["libs/persons/src/index.ts"],
       "@clone/pipes": ["libs/pipes/src/index.ts"],
       "@clone/schemas": ["libs/schemas/src/index.ts"],
       "@clone/search": ["libs/search/src/index.ts"],
+      "@clone/serials": ["libs/serials/src/index.ts"],
       "@clone/services": ["libs/services/src/index.ts"],
       "@clone/user": ["libs/user/src/index.ts"]
     }

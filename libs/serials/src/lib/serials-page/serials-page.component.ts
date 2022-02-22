@@ -1,15 +1,15 @@
 import { Component, /* OnInit, */ ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'clone-news-home-page',
-  templateUrl: './news-home-page.component.html',
-  styleUrls: ['./news-home-page.component.scss'],
+  selector: 'clone-serials-page',
+  templateUrl: './serials-page.component.html',
+  styleUrls: ['./serials-page.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NewsHomePageComponent /* implements OnInit */ {
+export class SerialsPageComponent /* implements OnInit */ {
 
-  // constructor() { }
+  // constructor() {}
 
   // ngOnInit(): void {
   // }
