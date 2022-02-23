@@ -17,12 +17,12 @@ export class MovieService {
 
   getMovieId(id: number) {
     return this.http.get<MovieId>(
-      'http://localhost/api/movie/' + id,
+      'https://zhopki-morkovnie.herokuapp.com/api/movie/' + id,
     );
   }
 
   getMovieFromOurApi(): Observable<MovieId[]> {
-    return this.http.get<MovieId[]>('http://localhost/api/movie');
+    return this.http.get<MovieId[]>('https://zhopki-morkovnie.herokuapp.com/api/movie');
   }
 
   filter(filterForm: MovieFilter) {
