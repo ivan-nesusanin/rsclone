@@ -17,12 +17,12 @@ export class MovieService {
 
   getMovieId(id: number) {
     return this.http.get<MovieId>(
-      'http://localhost:3333/api/movie/' + id,
+      'http://localhost/api/movie/' + id,
     );
   }
 
   getMovieFromOurApi(): Observable<MovieId[]> {
-    return this.http.get<MovieId[]>('http://localhost:3333/api/movie');
+    return this.http.get<MovieId[]>('http://localhost/api/movie');
   }
 
   filter(filterForm: MovieFilter) {
