@@ -11,8 +11,10 @@
     "models": "libs/models",
     "movie": "libs/movie",
     "news": "libs/news",
+    "persons": "libs/persons",
     "schemas": "libs/schemas",
     "search": "libs/search",
+    "serials": "libs/serials",
     "services": "libs/services",
     "user": "libs/user"
   }

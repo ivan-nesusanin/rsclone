@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MovieId } from '@clone/models';
-import { MovieFilter, MovieService } from '@clone/services';
+import { /* MovieFilter,  */MovieService } from '@clone/services';
 
 @Component({
   selector: 'clone-movie-home-page',
@@ -18,7 +18,7 @@ export class MovieHomePageComponent implements OnInit {
     });
   }
 
-  onChangeFilter(formValue: MovieFilter) {
-    this.movieService.filter(formValue);
-  }
+  // onChangeFilter(formValue: MovieFilter) {
+  //   this.movieService.filter(formValue);
+  // }
 }

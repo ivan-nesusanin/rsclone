@@ -5,7 +5,6 @@ import { MovieHomePageComponent } from './movie-home-page/movie-home-page.compon
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { NgxPaginationModule } from 'ngx-pagination';
 
 export const movieRoutes: Route[] = [
   { path: '', component: MovieHomePageComponent },
@@ -15,11 +14,9 @@ export const movieRoutes: Route[] = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
     RouterModule.forChild(movieRoutes),
     FormsModule,
     ReactiveFormsModule,
-    /* NgxPaginationModule */
   ],
   declarations: [
     MovieHomePageComponent,

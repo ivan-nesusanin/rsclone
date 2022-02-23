@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { MovieId } from '@clone/models';
 import { Observable } from 'rxjs';
 
-export interface MovieFilter {
-  [key: string]: string[];
-}
+// export interface MovieFilter {
+//   [key: string]: string[];
+// }
 @Injectable({
   providedIn: 'root',
 })
@@ -17,21 +17,25 @@ export class MovieService {
 
   getMovieId(id: number) {
     return this.http.get<MovieId>(
-      'https://zhopki-morkovnie.herokuapp.com/api/movie/' + id,
+      'https://rs-kp.herokuapp.com/api/movie/' + id
     );
   }
 
   getMovieFromOurApi(): Observable<MovieId[]> {
-    return this.http.get<MovieId[]>('https://zhopki-morkovnie.herokuapp.com/api/movie');
+    return this.http.get<MovieId[]>('https://rs-kp.herokuapp.com/api/movie');
   }
 
-  filter(filterForm: MovieFilter) {
-    const keys = Object.keys(filterForm);
-    keys.forEach((key) => {
-      const currentFilter = filterForm[key];
-      this.filteredMovies = this.movies.filter((movie) =>
-        currentFilter.includes(movie[key as keyof MovieId]?.toString() || '')
-      );
-    });
+  getArrMovie(): Observable<MovieId[]> {
+    return this.http.get<MovieId[]>('https://rs-kp.herokuapp.com/api/movie');
   }
+
+  // filter(filterForm: MovieFilter) {
+  //   const keys = Object.keys(filterForm);
+  //   keys.forEach((key) => {
+  //     const currentFilter = filterForm[key];
+  //     this.filteredMovies = this.movies.filter((movie) =>
+  //       currentFilter.includes(movie[key as keyof MovieId]?.toString() || '')
+  //     );
+  //   });
+  // }
 }

@@ -79,7 +79,7 @@ AppModule = (0, tslib_1.__decorate)([
             auth_module_1.AuthModule,
             mongoose_1.MongooseModule.forRoot(`mongodb+srv://rsstudent:FJLjwzI0gaKzGEok@cluster0.w9p60.mongodb.net/movies?retryWrites=true&w=majority`),
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '..', 'nx-app'),
+                rootPath: (0, path_1.join)(__dirname, '..', 'frontend'),
                 exclude: ['/api*'],
             }),
         ],

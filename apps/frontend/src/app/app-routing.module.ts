@@ -18,13 +18,21 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('@clone/user').then((m) => m.UserModule),
   },
-  // {
-  //   path: 'film',
-  //   loadChildren: () => import('@clone/film').then((m) => m.FilmModule),
-  // },
   {
     path: 'movie',
     loadChildren: () => import('@clone/movie').then((m) => m.MovieModule),
+  },
+  {
+    path: 'serials',
+    loadChildren: () => import('@clone/serials').then((m) => m.SerialsModule),
+  },
+  {
+    path: 'news',
+    loadChildren: () => import('@clone/news').then((m) => m.NewsModule),
+  },
+  {
+    path: 'persons',
+    loadChildren: () => import('@clone/persons').then((m) => m.PersonsModule),
   },
   {
     path: '**',

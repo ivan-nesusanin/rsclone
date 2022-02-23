@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/serials",
+  "sourceRoot": "libs/serials/src",
+  "prefix": "clone",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/serials"],
+      "options": {
+        "jestConfig": "libs/serials/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/serials/src/**/*.ts",
+          "libs/serials/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
